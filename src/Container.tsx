@@ -1,3 +1,4 @@
+import './Container.css'
 import { useState, type ChangeEvent} from "react"
 interface ProdutosState{
     id:number,
@@ -29,7 +30,6 @@ function Container() {
         preco: parseFloat(preco),
         categoria
     }
-
     setProdutos([...produtos,produtoNovo])
 
    }
@@ -49,11 +49,12 @@ function Container() {
         <>
         <div className="container">
             <div className="container-cadastro">
+                <h1>Cadastro Produto</h1>
                 <form onSubmit={trataForm}>
-                    <input type="text" name="id" id="id" onChange={trataId}/>
-                    <input type="text" name="nome" id="nome" onChange={trataNome}/>
-                    <input type="text" name="preco" id="preco" onChange={trataPreco}/>
-                    <input type="text" name="categoria" id="categoria" onChange={trataCategoria}/>
+                    <input type="text" name="id" id="id" placeholder="Id" onChange={trataId}/>
+                    <input type="text" name="nome" id="nome" placeholder="Nome" onChange={trataNome}/>
+                    <input type="text" name="preco" id="preco" placeholder="Preço" onChange={trataPreco}/>
+                    <input type="text" name="categoria" id="categoria" placeholder="Categoria" onChange={trataCategoria}/>
                     <input type="submit" value="Cadastrar" />
                 </form>
             </div>
